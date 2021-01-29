@@ -26,7 +26,16 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="button_number_style_land" parent="button_number_style">
+        <item name="android:textSize">15sp</item>
+    </style>
+
     <style name="button_func_style" parent="button_number_style">
+        <item name="android:textColor">@color/teal_700</item>
+    </style>
+
+    <style name="button_func_style_land" parent="button_number_style">
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/teal_700</item>
     </style>
 

@@ -13,7 +13,7 @@
         android:gravity="right"
         android:paddingRight="10dp"
         android:text="0"
-        android:textSize="40dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tv_san"
@@ -22,7 +22,8 @@
         android:gravity="right"
         android:paddingRight="10dp"
         android:text="0"
-        android:textSize="50dp" />
+        android:background="@color/teal_700"
+        android:textSize="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,21 +33,21 @@
 
         <Button
             android:id="@+id/btnOshiru"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="C"/>
 
         <Button
             android:id="@+id/btnPlusMinus"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="+/-" />
 
         <Button
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="%" />
 
         <Button
             android:id="@+id/btnBolu"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="/" />
 
     </LinearLayout>
@@ -59,22 +60,22 @@
 
         <Button
             android:id="@+id/btn7"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="7"/>
 
         <Button
             android:id="@+id/btn8"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="8" />
 
         <Button
             android:id="@+id/btn9"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="9" />
 
         <Button
             android:id="@+id/btnX"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="X" />
 
     </LinearLayout>
@@ -87,22 +88,22 @@
 
         <Button
             android:id="@+id/btn4"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="4"/>
 
         <Button
             android:id="@+id/btn5"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="5" />
 
         <Button
             android:id="@+id/btn6"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="6" />
 
         <Button
             android:id="@+id/btnMinus"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="-" />
 
     </LinearLayout>
@@ -115,22 +116,22 @@
 
         <Button
             android:id="@+id/btn1"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="1"/>
 
         <Button
             android:id="@+id/btn2"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="2" />
 
         <Button
             android:id="@+id/btn3"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="3" />
 
         <Button
             android:id="@+id/btnPlus"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:text="+" />
 
     </LinearLayout>
@@ -143,17 +144,17 @@
 
         <Button
             android:id="@+id/btn0"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="0"/>
 
         <Button
             android:id="@+id/btnNukte"
-            style="@style/button_number_style"
+            style="@style/button_number_style_land"
             android:text="." />
 
         <Button
             android:id="@+id/btnTen"
-            style="@style/button_func_style"
+            style="@style/button_func_style_land"
             android:layout_weight="3.7"
             android:text="=" />
 

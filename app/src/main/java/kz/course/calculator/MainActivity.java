@@ -10,13 +10,24 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-    Button btnOshiru, btnPlusMinus;
-    TextView tvSan;
+    Button btnOshiru, btnPlusMinus, btnPlus, btnMinus, btnX, btnBolu, btnTen;
+    TextView tvSan, tvZapis;
+
+    String birinshiSan, ekisnshiSan, znak, zapisText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initViews();
+        sandarMethods();
+        oshiruPlusMinusMethod();
+        functionMethod();
+
+    }
+
+    public void initViews(){
 
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
@@ -32,8 +43,17 @@ public class MainActivity extends AppCompatActivity {
         btnOshiru = findViewById(R.id.btnOshiru);
         btnPlusMinus = findViewById(R.id.btnPlusMinus);
 
+        btnPlus = findViewById(R.id.btnPlus);
+        btnMinus = findViewById(R.id.btnMinus);
+
+        btnX = findViewById(R.id.btnX);
+        btnBolu = findViewById(R.id.btnBolu);
+        btnTen = findViewById(R.id.btnTen);
 
         tvSan = findViewById(R.id.tv_san);
+        tvZapis = findViewById(R.id.tv_zapis);
+    }
+    public void sandarMethods(){
 
         View.OnClickListener buttonSandar = new View.OnClickListener() {
             @Override
@@ -93,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
         btn7.setOnClickListener(buttonSandar);
         btn8.setOnClickListener(buttonSandar);
         btn9.setOnClickListener(buttonSandar);
+    }
+    public void oshiruPlusMinusMethod(){
 
         View.OnClickListener buttonOwiruPlusMinus = new View.OnClickListener() {
             @Override
@@ -101,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btnOshiru:
 
                         tvSan.setText("0");
+                        tvZapis.setText("");
                         break;
 
                     case R.id.btnPlusMinus:
@@ -124,5 +147,68 @@ public class MainActivity extends AppCompatActivity {
         btnOshiru.setOnClickListener(buttonOwiruPlusMinus);
         btnPlusMinus.setOnClickListener(buttonOwiruPlusMinus);
 
+    }
+    public void functionMethod(){
+        View.OnClickListener btnFunctions = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                birinshiSan = tvSan.getText().toString();
+
+                switch (view.getId()){
+
+                    case R.id.btnPlus:
+                        znak = "+";
+                        break;
+
+                    case R.id.btnMinus:
+                        znak = "-";
+                        break;
+                    case R.id.btnX:
+                        znak = "*";
+                        break;
+
+                    case R.id.btnBolu:
+                        znak = "/";
+                        break;
+                }
+
+                zapisText = birinshiSan + znak;
+                tvZapis.setText(zapisText);
+                tvSan.setText("0");
+            }
+        };
+
+        btnPlus.setOnClickListener(btnFunctions);
+        btnMinus.setOnClickListener(btnFunctions);
+        btnX.setOnClickListener(btnFunctions);
+        btnBolu.setOnClickListener(btnFunctions);
+
+
+        btnTen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ekisnshiSan = tvSan.getText().toString();
+                int san1 = Integer.parseInt(birinshiSan);
+                int san2 = Integer.parseInt(ekisnshiSan);
+                int res = 0;
+
+                if(znak.equals("+")){
+                    res = san1 + san2;
+                }else if(znak.equals("-")){
+                    res = san1 - san2;
+                }else if(znak.equals("*")){
+                    res = san1 * san2;
+                }else if(znak.equals("/")){
+                    res = san1 / san2;
+                }
+
+                zapisText = birinshiSan + znak + ekisnshiSan + " = "+res;
+
+                tvZapis.setText(zapisText);
+                tvSan.setText(""+res);
+            }
+        });
     }
 }
